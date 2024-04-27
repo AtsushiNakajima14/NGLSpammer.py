@@ -1,4 +1,4 @@
-import os
+import os  
 import requests
 import time
 import textwrap
@@ -63,4 +63,4 @@ def main():
         os.system('clear' if os.name == 'posix' else 'cls') 
 
 if __name__ == "__main__":
-    main()'
+    main()
