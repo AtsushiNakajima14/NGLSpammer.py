@@ -1,0 +1,60 @@
+import os
+import requests
+import time
+import textwrap
+
+def sendSpam(user, message):
+    url = 'https://ngl.link/api/submit'
+    payload = {'username': user, 'question': message, 'deviceId': ""}
+    headers = {'Content-Type': 'application/json'}
+    response = requests.post(url, json=payload, headers=headers)
+    return response.status_code
+
+def main():
+    while True:
+        banner_text = """
+
+░█████╗░██╗░░░██╗██████╗░██╗██╗░░░░░
+██╔══██╗╚██╗░██╔╝██╔══██╗██║██║░░░░░
+██║░░╚═╝░╚████╔╝░██████╔╝██║██║░░░░░
+██║░░██╗░░╚██╔╝░░██╔══██╗██║██║░░░░░
+╚█████╔╝░░░██║░░░██║░░██║██║███████╗
+░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝╚══════╝
+        
+\033[91mFollow my developer ♡
+        """
+        facebook_link = "https://www.facebook.com/cyril.pumdal"
+        facebook_link = "Cyril Matt O. Encenso"
+
+        # Wrapping text to limit output to 40 characters per line
+        banner_text_wrapped = textwrap.fill(banner_text, width=40)
+        facebook_link_wrapped = textwrap.fill(facebook_link, width=40)
+
+        box_ui = f"\033[91m{'-'*50}\n" + \
+                 f"{banner_text_wrapped}\n" + \
+                 f"{'-'*50}\n" + \
+                 f"Facebook: {facebook_link_wrapped}\n" + \
+                 f"{'-'*50}\n"
+
+        print(box_ui)
+        
+        user = input("\033[91mEnter username:~ \033[1;91m")
+        message = input("\033[91mEnter message:~ \033[1;91m")
+        amount = int(input("\033[91mEnter amount:~ \033[1;91m"))
+        
+        if amount > 100:
+            print("Sorry, the limit is 100.")
+        else:
+            for i in range(1, amount + 1):
+                status_code = sendSpam(user, message)
+                text = f"\033[93m[ NGL ] \033[91m[\033[91m{i}\033[91m][{'success' if status_code == 200 else 'error'}]: Message sent to target: {user}\033[0m"
+                print(text)
+                time.sleep(2)
+        
+            print('\n\033[91mYou are loved by God ♡ \033[0m')
+        
+        time.sleep(3) 
+        os.system('clear' if os.name == 'posix' else 'cls') 
+
+if __name__ == "__main__":
+    main()
