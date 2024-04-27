@@ -13,6 +13,8 @@ def sendSpam(user, message):
 def main():
     while True:
         banner_text = """
+        
+      
 
 ░█████╗░██╗░░░██╗██████╗░██╗██╗░░░░░
 ██╔══██╗╚██╗░██╔╝██╔══██╗██║██║░░░░░
@@ -20,21 +22,25 @@ def main():
 ██║░░██╗░░╚██╔╝░░██╔══██╗██║██║░░░░░
 ╚█████╔╝░░░██║░░░██║░░██║██║███████╗
 ░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝╚══════╝
+                                                       
+                                                       
         
-\033[91mFollow my developer ♡
+        \033[91mFollow my developer ♡
         """
-        facebook_link = "https://www.facebook.com/cyril.pumdal"
+        github_link = "https://github.com/Atsushinakajima14"
         facebook_link = "Cyril Matt O. Encenso"
 
         # Wrapping text to limit output to 40 characters per line
         banner_text_wrapped = textwrap.fill(banner_text, width=40)
-        facebook_link_wrapped = textwrap.fill(facebook_link, width=40)
+        github_link_wrapped = textwrap.fill(github_link, width=40)
+        facebook_link_wrapped = textwrap.fill(facebook_link, width=100)
 
-        box_ui = f"\033[91m{'-'*50}\n" + \
+        box_ui = f"\033[91m{'-'*54}\n" + \
                  f"{banner_text_wrapped}\n" + \
-                 f"{'-'*50}\n" + \
+                 f"{'-'*54}\n" + \
+                 f"GitHub: {github_link_wrapped}\n" + \
                  f"Facebook: {facebook_link_wrapped}\n" + \
-                 f"{'-'*50}\n"
+                 f"{'-'*54}\n"
 
         print(box_ui)
         
@@ -51,10 +57,10 @@ def main():
                 print(text)
                 time.sleep(2)
         
-            print('\n\033[91mYou are loved by God ♡ \033[0m')
+            print('\n\033[91mYou are loved by God. ♡\033[0m')
         
         time.sleep(3) 
         os.system('clear' if os.name == 'posix' else 'cls') 
 
 if __name__ == "__main__":
-    main()
+    main()'
